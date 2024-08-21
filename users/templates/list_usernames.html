@@ -1,0 +1,21 @@
+{% load users_extras %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Total Users are {{usernames|length}}</h1>
+    <ul>
+    {% for user in usernames %}
+
+        <li style="background-color: {% cycle colors.0|cut:"1" colors.1|cut:"1" %}; font-size: 25px;">{{ user|dummy:"HaHA" }}</li>
+
+    {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -24,4 +24,7 @@ urlpatterns = [
     path("home/", views.home),
     path("value-capture-2/<name>/<int:age>", views.value_capture_test2),
     path("failure/", views.failure, name="failure"),
+    path("list-users/", views.list_usernames, name="list-users"),
+    path("list-articles/", views.articles_list, name="list-articles"),
+    path("article/<int:id>", views.article_details, name="article"),
 ]
