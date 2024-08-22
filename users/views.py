@@ -51,28 +51,32 @@ articles = [
            'title': 'Introduction to Django',
            'content': 'Django is a high-level Python web framework...',
            'author': 'Jane Doe',
-           'published_date': '2023-08-21 10:30:00'
+           'published_date': '2023-08-21 10:30:00',
+           "archived": True
        },
        {
            'id': 2,
            'title': 'Understanding Django Templates',
            'content': 'Django templates allow you to dynamically generate HTML...',
            'author': 'John Smith',
-           'published_date': '2023-08-22 14:45:00'
+           'published_date': '2023-08-22 14:45:00',
+           "archived": True
        },
        {
            'id': 3,
            'title': 'Django Views',
            'content': 'Django views is somthing detail detail.',
            'author': 'Naveed Khan',
-           'published_date': '2023-08-23 14:45:00'
+           'published_date': '2023-08-23 14:45:00',
+           "archived": False
        },
        {
            'id': 4,
            'title': 'Variable Interpolation',
            'content': 'very intresting topic....',
            'author': 'sami ',
-           'published_date': '2023-08-22 14:45:00'
+           'published_date': '2023-08-22 14:45:00',
+           "archived": False
        }
        
 ]
@@ -87,3 +91,11 @@ def article_details(request, id):
             return render(request, "articles_detail.html", article)
     
     return HttpResponse("Article not found")
+
+
+def parent_template(request):
+    return render(request, "inheritance/base.html")
+
+
+def child_template(request):
+    return render(request, "inheritance/child.html")

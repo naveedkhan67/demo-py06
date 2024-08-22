@@ -11,3 +11,10 @@ register.filter("dummy", dummy_filter)
 def format_date(date):
     """Implement something related to date formatting"""
     pass
+
+@register.simple_tag
+def generate_dummy_string(s):
+    s = s + "asfasfsdfsfasdsqada"
+    
+    return s  
+

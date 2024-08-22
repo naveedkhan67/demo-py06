@@ -26,5 +26,7 @@ urlpatterns = [
     path("failure/", views.failure, name="failure"),
     path("list-users/", views.list_usernames, name="list-users"),
     path("list-articles/", views.articles_list, name="list-articles"),
-    path("article/<int:id>", views.article_details, name="article"),
+    path("article/<int:id>/", views.article_details, name="article"),
+    path("base/", views.parent_template, name="parent"),
+    path("child/", views.child_template, name="child"),
 ]

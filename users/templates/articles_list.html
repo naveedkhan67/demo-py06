@@ -1,3 +1,5 @@
+{% load users_extras %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +13,17 @@
         <ul>
             {% for article in articles %}
                 <li> 
-                    <h2><a href=" /users/article/{{article.id}} "> {{article.title}} </a> </h2>
+                    {% if article.archived %} 
+                        <h2 style = "background-color: grey"><a href=" {% url 'article' article.id %} "> {{article.title}} </a> </h2>
+                    {% else %}
+                        <h2 style = "background-color: red"><a href=" {% url 'article' article.id %} "> {{article.title}} </a> </h2>
+                    {% endif %}
                 </li>
             {% endfor %}
+
+            <h1>{% generate_dummy_string "Naveed" %} </h1>
+
+            {% include "our_design.html" %}
         </ul>
     </div>
 

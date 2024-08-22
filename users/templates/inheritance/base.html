@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} 
+        PARENT TEMPLATE
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <h1>This is outside the block</h1>
+
+    {% block content %}
+        <h1>This is a parent template</h1>
+    {% endblock %}
+
+    {% block second-content%}
+    <h1 style="color:red">This is second content block</h1>
+     {% endblock %}
+
+    <h2>This is below the block content</h2>    
+    
+</body>
+</html>
